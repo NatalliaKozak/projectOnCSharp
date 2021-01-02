@@ -1,0 +1,44 @@
+﻿<Application x:Class="kurs.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:kurs"
+             xmlns:views="clr-namespace:kurs.Views"
+             xmlns:viewmodels="clr-namespace:kurs.ViewModels"
+             StartupUri="LogWind.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Dictionaries/ViewOfTextBox.xaml"/>
+                <ResourceDictionary Source="Dictionaries/Butt.xaml"/>
+                <ResourceDictionary Source="Dictionaries/Lable.xaml"/>
+                <ResourceDictionary Source="Dictionaries/ScrollBar.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
+            <DataTemplate DataType="{x:Type viewmodels:listViewModel}">
+                <views:listStud/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:addInfoSub}">
+                <views:addInfoSub/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:studetInfo}">
+                <views:studentInfo/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:infoSubbotStudent}">
+                <views:infoSubbotStudent/>
+             </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:infoOtrStudent}">
+                <views:infoOtrStudent/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:addInfoOtr}">
+                <views:addIbfoOtr/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:addNewStudents}">
+                <views:addNewStudents/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:infoOtrAndSub}">
+                <views:infoOtrAndSub/>
+            </DataTemplate>
+
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

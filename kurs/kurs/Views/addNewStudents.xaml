@@ -1,0 +1,321 @@
+﻿<ContentControl x:Class="kurs.Views.addNewStudents"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:kurs.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800" >
+    <ContentControl.Resources>
+        <Style x:Key="textBox" TargetType="TextBox">
+            <Setter Property="FontFamily" Value="Helvetica"/>
+            <Setter Property="FontWeight" Value="Light"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Width" Value="250"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+        </Style>
+        <Style x:Key="text_style" TargetType="{x:Type TextBlock}">
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="Foreground" Value="White"/>
+        </Style>
+    </ContentControl.Resources>
+    <Grid >
+        <Grid >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="60"></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"></RowDefinition>
+                    <RowDefinition Height="50"></RowDefinition>
+                    <RowDefinition Height="30"></RowDefinition>
+                    <RowDefinition Height="30"></RowDefinition>
+                    <RowDefinition Height="30"></RowDefinition>
+                    <RowDefinition Height="30"></RowDefinition>
+                    <RowDefinition Height="30"></RowDefinition>
+                    <RowDefinition Height="30"></RowDefinition>
+                    <RowDefinition Height="30"></RowDefinition>
+                    <RowDefinition Height="30"></RowDefinition>
+                    <RowDefinition Height="20"></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="0" Grid.ColumnSpan="2"
+                  Height="40">
+
+                    <Grid.Background>
+                        <LinearGradientBrush>
+                            <GradientStop Color="#FF091843"/>
+                            <GradientStop Color="#FF832B4E" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Grid.Background>
+
+
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <Image Source="/img/addUser_1.png" 
+                           Stretch="None"
+                           Margin="10 0 10 0"/>
+
+                        <TextBlock Text="Запись новых проживающих"
+                           FontSize="16"
+                           FontFamily="Helvetica"
+                           Foreground="White"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center"/>
+                    </StackPanel>
+
+
+
+
+
+
+                </Grid>
+
+
+
+
+
+                <Rectangle Grid.Row="2" Grid.Column="1" 
+                       Fill="#33FAD7EA"
+                       Panel.ZIndex="1"
+                       Height="25"
+                       RadiusY="10.933" RadiusX="10.933" Margin="119,2.8,456,3.4"/>
+            <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal" Panel.ZIndex="2" x:Name="grid">
+
+                    <TextBlock Text="Студенческий:"
+                           FontFamily="Times New Roman"
+                           FontSize="18" Foreground="White"
+                           VerticalAlignment="Center" HorizontalAlignment="Left"/>
+
+                    <TextBox Text=""
+                         Style="{StaticResource box}"
+                         FontSize="18"
+                         MaxLength="9"
+                         PreviewTextInput="onlyNumb"
+                         Background="Transparent"
+                         FontFamily="Times New Roman"
+                         Foreground="Black"
+                         Margin="10,5,0,5.2"
+                         x:Name="Id" Width="100"
+                         HorizontalAlignment="Left" Height="20"
+                         />
+
+                </StackPanel>
+
+
+
+
+
+                <Rectangle Grid.Row="3" Grid.Column="1" 
+                       Fill="#33FAD7EA"
+                       Panel.ZIndex="1"
+                       Height="25"
+                       RadiusY="10.933" RadiusX="10.933" Margin="83,3.6,446,2.6"/>
+                <StackPanel Grid.Row="3" Grid.Column="1" Orientation="Horizontal" Panel.ZIndex="2">
+
+                    <TextBlock Text="Фамилия:"
+                           FontFamily="Times New Roman"
+                           FontSize="18" Foreground="White"
+                           VerticalAlignment="Center" HorizontalAlignment="Left"/>
+
+                    <TextBox Text=""
+                         Style="{StaticResource box}"
+                         FontSize="18"
+                         Width="145"
+                         Background="Transparent"
+                         FontFamily="Times New Roman"
+                         Foreground="Black"
+                         Margin="10,5,0,3.2"
+                         x:Name="L_Name" 
+                         PreviewTextInput="onlyLett"
+                         HorizontalAlignment="Left" Height="23"
+                         />
+
+                </StackPanel>
+
+
+                <Rectangle Grid.Row="4" Grid.Column="1" 
+                       Fill="#33FAD7EA"
+                       Panel.ZIndex="1"
+                       Height="25"
+                       RadiusY="10.933" RadiusX="10.933" Margin="46,3.4,488,2.8"/>
+                <StackPanel Grid.Row="4" Grid.Column="1" Orientation="Horizontal" Panel.ZIndex="2">
+
+                    <TextBlock Text="Имя:"
+                           FontFamily="Times New Roman"
+                           FontSize="18" Foreground="White"
+                           VerticalAlignment="Center" HorizontalAlignment="Left"/>
+
+                    <TextBox Text=""
+                         Style="{StaticResource box}"
+                         FontSize="18"
+                         Width="145"
+                         Background="Transparent"
+                         FontFamily="Times New Roman"
+                         Foreground="Black"
+                         Margin="10,5,0,3.2"
+                         x:Name="F_Name" 
+                         PreviewTextInput="onlyLett"
+                         HorizontalAlignment="Left" Height="23"
+                         />
+
+                </StackPanel>
+
+                <Rectangle Grid.Row="5" Grid.Column="1" 
+                       Fill="#33FAD7EA"
+                       Panel.ZIndex="1"
+                       Height="25"
+                       RadiusY="10.933" RadiusX="10.933" Margin="83,3.2,446,3"/>
+                <StackPanel Grid.Row="5" Grid.Column="1" Orientation="Horizontal" Panel.ZIndex="2">
+
+                    <TextBlock Text="Отчество:"
+                           FontFamily="Times New Roman"
+                           FontSize="18" Foreground="White"
+                           VerticalAlignment="Center" HorizontalAlignment="Left"/>
+
+                    <TextBox Text=""
+                         Style="{StaticResource box}"
+                         FontSize="18"
+                         Width="145"
+                         Background="Transparent"
+                         FontFamily="Times New Roman"
+                         Foreground="Black"
+                         Margin="10,5,0,3.2"
+                         x:Name="M_Name" 
+                         PreviewTextInput="onlyLett"
+                         HorizontalAlignment="Left" Height="23"
+                         />
+
+                </StackPanel>
+
+
+                <Rectangle Grid.Row="6" Grid.Column="1" 
+                       Fill="#33FAD7EA"
+                       Panel.ZIndex="1"
+                       Height="25"
+                       RadiusY="10.933" RadiusX="10.933" Margin="92,3,471,3.2"/>
+                <StackPanel Grid.Row="6" Grid.Column="1" Orientation="Horizontal" Panel.ZIndex="2">
+
+                    <TextBlock Text="Факультет:"
+                           FontFamily="Times New Roman"
+                           FontSize="18" Foreground="White"
+                           VerticalAlignment="Center" HorizontalAlignment="Left"/>
+
+                    <TextBox Text=""
+                         Style="{StaticResource box}"
+                         FontSize="18"
+                         Width="111"
+                         Background="Transparent"
+                         FontFamily="Times New Roman"
+                         Foreground="Black"
+                         Margin="10,5,0,3.2"
+                         x:Name="Facult" 
+                         PreviewTextInput="onlyLett"
+                         HorizontalAlignment="Left" Height="23"
+                         />
+
+                </StackPanel>
+
+
+                <Rectangle Grid.Row="7" Grid.Column="1" 
+                       Fill="#33FAD7EA"
+                       Panel.ZIndex="1"
+                       Height="25"
+                       RadiusY="10.933" RadiusX="10.933" Margin="49,2.8,589,3.4"/>
+                <StackPanel Grid.Row="7" Grid.Column="1" Orientation="Horizontal" Panel.ZIndex="2">
+
+                    <TextBlock Text="Курс:"
+                           FontFamily="Times New Roman"
+                           FontSize="18" Foreground="White"
+                           VerticalAlignment="Center" HorizontalAlignment="Left"/>
+
+                    <TextBox Text=""
+                         Style="{StaticResource box}"
+                         FontSize="18"
+                         Width="45"
+                         MaxLength="1"
+                         Background="Transparent"
+                         FontFamily="Times New Roman"
+                         Foreground="Black"
+                         Margin="10,5,0,3.2"
+                         x:Name="Curs" 
+                         PreviewTextInput="onlyNumb"
+                         HorizontalAlignment="Left" Height="23"
+                         />
+
+                </StackPanel>
+
+
+                <Rectangle Grid.Row="8" Grid.Column="1" 
+                       Fill="#33FAD7EA"
+                       Panel.ZIndex="1"
+                       Height="25"
+                       RadiusY="10.933" RadiusX="10.933" Margin="66,3.6,581,2.6"/>
+                <StackPanel Grid.Row="8" Grid.Column="1" Orientation="Horizontal" Panel.ZIndex="2">
+
+                    <TextBlock Text="Группа:"
+                           FontFamily="Times New Roman"
+                           FontSize="18" Foreground="White"
+                           VerticalAlignment="Center" HorizontalAlignment="Left"/>
+
+                    <TextBox Text=""
+                         Style="{StaticResource box}"
+                         FontSize="18"
+                         Width="40"
+                         Background="Transparent"
+                         FontFamily="Times New Roman"
+                         Foreground="Black"
+                         Margin="10,5,0,3.2"
+                         x:Name="Group" 
+                         PreviewTextInput="onlyNumb"
+                         MaxLength="2"
+                         HorizontalAlignment="Left" Height="23"
+                         />
+
+                </StackPanel>
+
+                <Rectangle Grid.Row="9" Grid.Column="1" 
+                       Fill="#33FAD7EA"
+                       Panel.ZIndex="1"
+                       Height="25"
+                       RadiusY="10.933" RadiusX="10.933" Margin="76,4.4,569,1.8"/>
+                <StackPanel Grid.Row="9" Grid.Column="1" Orientation="Horizontal" Panel.ZIndex="2">
+
+                    <TextBlock Text="Комната:"
+                           FontFamily="Times New Roman"
+                           FontSize="18" Foreground="White"
+                           VerticalAlignment="Center" HorizontalAlignment="Left"/>
+
+                    <TextBox Text=""
+                         Style="{StaticResource box}"
+                         FontSize="18"
+                         Width="40"
+                         Background="Transparent"
+                         FontFamily="Times New Roman"
+                         Foreground="Black"
+                         Margin="10,5,0,3.2"
+                         x:Name="Room" 
+                         PreviewTextInput="onlyNumb"
+                         MaxLength="4"
+                         HorizontalAlignment="Left" Height="23"
+                         />
+
+                </StackPanel>
+
+
+
+                <Button Grid.Column="1" Grid.Row="10"
+                    Height="35" Width="170" 
+                    Content="Добавить в списки"
+                    HorizontalAlignment="Left" 
+                    FontSize="15"
+                    Margin="66,21.2,0,-35.4"
+                    Click="addNewStudentToList"/>
+            </Grid>
+
+
+        </Grid>
+</ContentControl>

@@ -1,0 +1,145 @@
+﻿<Window x:Class="kurs.Registration"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:kurs"
+        mc:Ignorable="d"
+        Title="Registration" Height="450" Width="350" 
+        WindowStyle="None" ResizeMode="NoResize"
+        AllowsTransparency="True" Background="Transparent" WindowStartupLocation="CenterScreen" >
+    <Window.Resources>
+        <Style x:Key="LogWind" TargetType="TextBox">
+            <Setter Property="FontFamily" Value="Helvetica"/>
+            <Setter Property="FontWeight" Value="Light"/>
+            <Setter Property="Text" Value="Логин"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Width" Value="235"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+
+
+        </Style>
+
+        <Style x:Key="text_bl" TargetType="TextBlock">
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Foreground" Value="White"></Setter>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+    <Grid >
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="80"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+
+            <Border CornerRadius="10" Grid.RowSpan="2">
+                <Border.Background>
+                    <LinearGradientBrush>
+                        <GradientStop Color="#FF0A36B0" Offset="0.0"/>
+                        <GradientStop Color="#FFEE8EB4" Offset="1"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+            </Border>
+
+
+            <StackPanel>
+                <Label Content="Dormitory"
+                       Margin="0 30 0 0"
+                       HorizontalAlignment="Center" 
+                       FontFamily="Ink Free" FontSize="35" 
+                       Foreground="White" VerticalAlignment="Center"/>
+            </StackPanel>
+
+
+
+            <StackPanel Grid.Row="1">
+                
+                
+                
+                <StackPanel  Margin="0 80 0 0">
+                    <TextBox x:Name="Id" 
+                             Text="Студенческий"
+                             MaxLength="9"
+                             PreviewTextInput="onlyNumb"
+                         Style="{StaticResource LogWind}" PreviewMouseLeftButtonDown="Id_PreviewMouseLeftButtonDown" />
+                </StackPanel>
+
+                <Border Width="250"
+                    Height="2"
+                    Background="White"
+                    Opacity="0.5"/>
+
+                <StackPanel  Margin="0 20 0 0">
+                    <TextBox x:Name="Log" 
+                             Text="Логин"
+                         Style="{StaticResource LogWind}" 
+                             PreviewMouseLeftButtonDown="Log_PreviewMouseLeftButtonDown" />
+                </StackPanel>
+
+                <Border Width="250"
+                    Height="2"
+                    Background="White"
+                    Opacity="0.5"/>
+
+                <PasswordBox x:Name="Pass" 
+                             Margin="0 20 0 0 "
+                             FontWeight="Light" FontSize="20"
+                             HorizontalAlignment="Center"
+                             Foreground="White"
+                             Background="Transparent" BorderThickness="0" Width="235"
+                             HorizontalContentAlignment="Left" Opacity="0.5"
+                             PreviewMouseLeftButtonDown="Pass_PreviewMouseLeftButtonDown"/>
+
+                <Border Width="250"
+                    Height="2"
+                    Background="White"
+                    Opacity="0.5"/>
+                <Label x:Name="LabPass" 
+                   Content="Пароль"
+                   FontWeight="Light"
+                    FontSize="20"
+                         HorizontalAlignment="Center"
+                         Foreground="White"
+                         Background="Transparent"
+                         BorderThickness="0"
+                         HorizontalContentAlignment="Left" Height="35" Margin="-170 -40 0 0" />
+
+
+
+                <StackPanel  Margin="0 20 0 0">
+                    <TextBox x:Name="Em" 
+                             Text="Email"
+                         Style="{StaticResource LogWind}" PreviewMouseLeftButtonDown="Em_PreviewMouseLeftButtonDown" />
+                </StackPanel>
+
+                <Border Width="250"
+                    Height="2"
+                    Background="White"
+                    Opacity="0.5"/>
+
+
+                <Button Content="Зарегистрироваться"   Margin="0 20 0 0 "
+                        Width="150" Height="40"
+                        Foreground="White" Click="registration"/>
+                <TextBlock Text="Вернуться назад"
+                           Margin="0 10 0 0 "
+                           HorizontalAlignment="Center"
+                           FontSize="15"
+                           Style="{StaticResource text_bl}"
+                           MouseLeftButtonDown="back"/>
+            </StackPanel>
+            
+
+        </Grid>
+    </Grid>
+
+</Window>

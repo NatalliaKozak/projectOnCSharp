@@ -1,0 +1,121 @@
+﻿<ContentControl x:Class="kurs.Views.infoOtrAndSub"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:kurs.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="550" >
+    <Grid>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="270"></ColumnDefinition>
+                <ColumnDefinition ></ColumnDefinition>
+                <ColumnDefinition Width="270"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"></RowDefinition>
+                <RowDefinition Height="40"></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition Height="60"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0" Grid.ColumnSpan="3"
+                  Height="40">
+
+                <Grid.Background>
+                    <LinearGradientBrush>
+                        <GradientStop Color="#FF091843"/>
+                        <GradientStop Color="#FF832B4E" Offset="1"/>
+                    </LinearGradientBrush>
+                </Grid.Background>
+
+
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Image Source="/img/list_1.png" 
+                           Stretch="None"
+                           Margin="10 0 20 0"/>
+
+                    <TextBlock Text="Общая информация"
+                           FontSize="16"
+                           FontFamily="Helvetica"
+                           Foreground="White"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center"/>
+                </StackPanel>
+
+
+            </Grid>
+
+
+            <TextBlock Text="Отработки:"
+                       VerticalAlignment="Center" HorizontalAlignment="Left"
+                       Foreground="White"
+                       FontSize="17" Grid.Row="1"
+                           >
+
+            </TextBlock>
+            <DataGrid ColumnHeaderHeight="27" Grid.Row="2"
+                      x:Name="otr" ColumnWidth ="Auto"
+                      CanUserResizeColumns="False" CanUserResizeRows="False"
+                      CanUserReorderColumns="False" CanUserSortColumns="False"
+                      CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True"
+                      SelectionMode="Single"
+                      GridLinesVisibility="Horizontal" HeadersVisibility="Column"
+                      BorderBrush="Transparent" >
+
+
+            </DataGrid>
+
+            <TextBlock Text="Субботники:"
+                       VerticalAlignment="Center" HorizontalAlignment="Left"
+                       Foreground="White"
+                       FontSize="17" Grid.Row="1" Grid.Column="2"
+                           >
+
+            </TextBlock>
+            <DataGrid ColumnHeaderHeight="27" Grid.Row="2" Grid.Column="2"
+                      x:Name="sub" ColumnWidth ="Auto"
+                      CanUserResizeColumns="False" CanUserResizeRows="False"
+                      CanUserReorderColumns="False" CanUserSortColumns="False"
+                      CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True"
+                      SelectionMode="Single"
+                      GridLinesVisibility="Horizontal" HeadersVisibility="Column"
+                      BorderBrush="Transparent" >
+
+
+            </DataGrid>
+
+
+            <StackPanel Orientation="Horizontal" Grid.Row="3" >
+                <TextBlock Text="Всего:"
+                       VerticalAlignment="Center" HorizontalAlignment="Left"
+                       Foreground="White"
+                       FontSize="17" Grid.Row="3" 
+                           />
+                <TextBlock x:Name="countOtr"
+                           Margin="10 0 0 0"
+                           VerticalAlignment="Center" FontSize="17"
+                           Foreground="White"/>
+                
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal"  Grid.Row="3" Grid.Column="2">
+                <TextBlock Text="Всего:"
+                       VerticalAlignment="Center" HorizontalAlignment="Left"
+                       Foreground="White"
+                       FontSize="17"
+                           />
+
+                <TextBlock x:Name="countSub"
+                           Margin="10 0 0 0"
+                           VerticalAlignment="Center" FontSize="17"
+                           Foreground="White"/>
+            </StackPanel>
+            
+
+            
+        </Grid>
+        
+    </Grid>
+</ContentControl>

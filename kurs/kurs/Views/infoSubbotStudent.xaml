@@ -1,0 +1,158 @@
+﻿<ContentControl x:Class="kurs.Views.infoSubbotStudent"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:kurs.Views"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="600" Loaded="ContentControl_Loaded">
+
+    <Grid >
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition Width="120"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0" Grid.ColumnSpan="2"
+                  Height="40">
+
+                <Grid.Background>
+                    <LinearGradientBrush>
+                        <GradientStop Color="#FF091843"/>
+                        <GradientStop Color="#FF832B4E" Offset="1"/>
+                    </LinearGradientBrush>
+                </Grid.Background>
+
+
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Image Source="/img/sub_1.png" 
+                           Stretch="None"
+                           Margin="10 0 20 0"/>
+
+                    <TextBlock Text="Информация о субботниках"
+                           FontSize="16"
+                           FontFamily="Helvetica"
+                           Foreground="White"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center"/>
+                </StackPanel>
+
+
+            </Grid>
+
+
+            <Grid Grid.Row="1">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition Height="30"></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+
+
+                <TextBlock Text="Список доступных субботников:"
+                           VerticalAlignment="Center"
+                           Foreground="White"
+                           FontSize="16"
+                           Margin="20 0 0 0"
+                           >
+
+                </TextBlock>
+
+
+                <DataGrid ColumnHeaderHeight="27" 
+                          Grid.Row="1"
+                          x:Name="info" 
+                          ColumnWidth ="Auto"
+                          CanUserResizeColumns="False" CanUserResizeRows="False"
+                          CanUserReorderColumns="False" CanUserSortColumns="False"
+                          CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True"
+                          SelectionMode="Single"
+                          GridLinesVisibility="Horizontal" HeadersVisibility="Column"
+                          MouseLeftButtonUp="info_MouseLeftButtonUp"
+                          BorderBrush="Transparent">
+
+
+                </DataGrid>
+
+                <TextBlock Text="Текущие субботники:"
+                           VerticalAlignment="Center"
+                           Foreground="White"
+                           FontSize="16"
+                           Margin="20 0 0 0"
+                           Grid.Row="2">
+
+                </TextBlock>
+                <DataGrid ColumnHeaderHeight="27" 
+                          Grid.Row="3"
+                          x:Name="infost" 
+                          ColumnWidth ="Auto"
+                          CanUserResizeColumns="False" CanUserResizeRows="False"
+                          CanUserReorderColumns="False" CanUserSortColumns="False"
+                          CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True"
+                          SelectionMode="Single"
+                          MouseLeftButtonUp="infost_MouseLeftButtonUp"
+                          GridLinesVisibility="Horizontal" HeadersVisibility="Column"
+                          BorderBrush="Transparent"/>
+
+
+
+            </Grid>
+
+
+            <Grid Grid.Row="1" Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+
+
+                <StackPanel Grid.Row="0">
+
+                    <Button Content="Записаться"
+                        Margin="0 60 0 0"
+                        Height="30" Width="100"
+                        IsEnabled="False" 
+                        x:Name="addItem"
+                        Click="addItem_Click"
+                        />
+                </StackPanel>
+
+
+                <StackPanel Grid.Row="1">
+
+                    <Button Content="Удалить"
+                        Margin="0 60 0 0"
+                        Height="30" Width="100"
+                        IsEnabled="False" 
+                        x:Name="delItem"
+                        Click="delItem_Click"
+                        />
+                    
+                    <Button Content="Обновить"
+                        Margin="0 10 0 0"
+                        Height="30" Width="100"
+                        x:Name="refItem"
+                        Click="refItem_Click"
+                        />
+                    
+                </StackPanel>
+
+            </Grid>
+            
+            
+            
+        </Grid>
+
+
+
+
+    </Grid>
+</ContentControl>
